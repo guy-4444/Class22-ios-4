@@ -1,11 +1,25 @@
-//
-//  main.swift
-//  Class22-ios-4
-//
-//  Created by Guy Macin on 11/04/2022.
-//
-
 import Foundation
 
-print("Hello, World!")
+//HealthApp().open()
+App().start()
 
+
+
+class HealthApp {
+
+    func open() {
+        var stepDetector = StepDetector(delegate: self)
+        stepDetector.start()
+
+    }
+
+}
+
+extension HealthApp : CallBack_Steps {
+    
+    
+    func stepDetect(c: Int) {
+        print("Text View Changet to: \(c)")
+    }
+    
+}
